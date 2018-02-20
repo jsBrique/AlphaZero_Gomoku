@@ -1,59 +1,53 @@
-## AlphaZero-Gomoku
-This is an implementation of the AlphaZero algorithm for playing the simple board game Gomoku (also called Gobang or Five in a Row) from pure self-play training. The game Gomoku is much simpler than Go or chess, so that we can focus on the training scheme of AlphaZero and obtain a pretty good AI model on a single PC in a few hours. 
+###AlphaZero，五子棋
+这是AlphaZero算法的实现，用于从纯粹的自我演奏训练中玩简单的棋盘游戏Gomoku（也称为五子棋或五人一组）。Gomoku游戏比Go或国际象棋要简单得多，因此我们可以专注于AlphaZero的训练计划，并在几小时内在单台PC上获得相当不错的AI模型。
 
-References:  
-1. AlphaZero: Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm
-2. AlphaGo Zero: Mastering the game of Go without human knowledge
+参考文献：
 
-### Update 2018.1.17: now supports training with PyTorch!
+AlphaZero：使用通用强化学习算法通过自我掌握棋和棋
+AlphaGo Zero：在没有人类知识的情况下掌握Go的游戏
+###更新2018.1.17：现在支持使用PyTorch进行培训！
+训练模型之间的示例游戏
+每次移动400次播放：
+playout400
+每次移动800个播放：
+playout800
+##要求
+要使用训练有素的AI模型，只需要：
 
-### Example Games Between Trained Models
-- Each move  with 400 playouts:  
-![playout400](https://raw.githubusercontent.com/junxiaosong/AlphaZero_Gomoku/master/playout400.gif)
-- Each move  with 800 playouts:  
-![playout800](https://raw.githubusercontent.com/junxiaosong/AlphaZero_Gomoku/master/playout800.gif)
+Python> = 2.7
+Numpy> = 1.11
+为了从头开始训练AI模型，还需要：
 
-### Requirements
-To play with the trained AI models, only need:
-- Python >= 2.7
-- Numpy >= 1.11
+Theano> = 0.7，千层面> = 0.1 
+或
+PyTorch> = 0.2.0
+PS：如果你的Theano的版本> 0.7，请按照这个问题安装千层面，
+否则，强制点将Theano降级到0.7pip install --upgrade theano==0.7.0
 
-To train the AI model from scratch, further need, either:
-- Theano >= 0.7 and Lasagne >= 0.1      
-or
-- PyTorch >= 0.2.0
+如果您想使用其他DL框架（如TensorFlow或MXNet）来训练模型，则只需重写policy_value_net.py。
 
-**PS**: if your Theano's version > 0.7, please follow this [issue](https://github.com/aigamedev/scikit-neuralnetwork/issues/235) to install Lasagne,  
-otherwise, force pip to downgrade Theano to 0.7 ``pip install --upgrade theano==0.7.0``
+##入门
+要使用提供的模型进行游戏，请从目录运行以下脚本：
 
-If you would like to train the model using other DL frameworks, such as TensorFlow or MXNet, you only need to rewrite policy_value_net.py.
-
-### Getting Started
-To play with provided models, run the following script from the directory:  
-```
 python human_play.py  
-```
-You may modify human_play.py to try different provided models or the pure MCTS.
+您可以修改human_play.py以尝试不同的提供模型或纯粹的MCTS。
 
-To train the AI model from scratch, with Theano and Lasagne, directly run:   
-```
+为了从头开始培训AI模型，Theano和Lasagne直接运行：
+
 python train.py
-```
-With PyTorch, first modify the file [train.py](https://github.com/junxiaosong/AlphaZero_Gomoku/blob/master/train.py), i.e., comment the line
-```
+使用PyTorch，首先修改文件train.py，即注释该行
+
 from policy_value_net import PolicyValueNet  # Theano and Lasagne
-```
-and uncomment the line 
-```
+并取消注释该行
+
 # from policy_value_net_pytorch import PolicyValueNet  # Pytorch
-```
-and then execute: ``python train.py``  (To use GPU training, set ``use_gpu=True``)
+然后执行:( python train.py 使用GPU训练，设置use_gpu=True）
 
-The models (best_policy.model and current_policy.model) will be saved every a few updates (default 50).
+模型（best_policy.model和current_policy.model）将在每次更新时保存（默认为50）。
 
-**Tips for training:**
-1. It is good to start with a 6 * 6 board and 4 in a row. For this case, we may obtain a reasonably good model within 500~1000 self-play games in about 2 hours.
-2. For the case of 8 * 8 board and 5 in a row, it may need 2000~3000 self-play games to get a good model, and it may take about 2 days on a single PC.
+##训练提示：
 
-### Further reading
-My article describing some details about the implementation in Chinese: [https://zhuanlan.zhihu.com/p/32089487](https://zhuanlan.zhihu.com/p/32089487) 
+从6 * 6板开始并连续4次是很好的做法。对于这种情况，我们可能会在约2个小时内在500〜1000个自我游戏中获得相当不错的模式。
+对于8 * 8电路板和连续5个电路板的情况，可能需要2000〜3000个自我玩游戏来获得一个好的模型，并且在一台PC上可能需要2天左右的时间。
+##进一步阅读
+我的文章描述了有关中文实施的一些细节：https : //zhuanlan.zhihu.com/p/32089487
