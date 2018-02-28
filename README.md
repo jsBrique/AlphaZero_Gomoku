@@ -7,12 +7,12 @@
 
 ### 更新2018.1.17: 现在支持使用PyTorch训练!
 
-### Example Games Between Trained Models
-- 400次迭代的模型效果:
+### 不同模型数据的对比效果
+- 400次MCTS搜索的模型效果:
 
 ![playout400](https://raw.githubusercontent.com/junxiaosong/AlphaZero_Gomoku/master/playout400.gif)
 
-- 800次迭代的模型效果:  
+- 800次MCTS搜索的模型效果:  
 ![playout800](https://raw.githubusercontent.com/junxiaosong/AlphaZero_Gomoku/master/playout800.gif)
 
 ### 依赖库
