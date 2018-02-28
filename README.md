@@ -58,4 +58,4 @@ from policy_value_net import PolicyValueNet  # Theano and Lasagne
 2. 对于8 * 8电路板和连续5个电路板的情况，可能需要2000〜3000个自我玩游戏来获得一个好的模型，并且在一台PC上可能需要2天左右的时间。
 
 ### 拓展阅读
-该项目作者在知乎专栏的文章中描述了有关该项目的一些细节: [https://zhuanlan.zhihu.com/p/32089487](https://zhuanlan.zhihu.com/p/32089487) 
+该项目作者[@一缕阳光](https://www.zhihu.com/people/yilu-yang-guang-40-55)在知乎专栏的文章中描述了有关该项目的一些细节: [https://zhuanlan.zhihu.com/p/32089487](https://zhuanlan.zhihu.com/p/32089487) 
