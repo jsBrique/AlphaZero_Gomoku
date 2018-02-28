@@ -30,7 +30,7 @@ or
 
 如果您想使用其他DL框架（如TensorFlow或MXNet）来训练模型，则只需重写policy_value_net.py。
 
-### Getting Started
+### 运行方法
 直接使用已经训练好的模型游玩, 只需在程序目录下运行这个脚本:  
 ```
 python human_play.py  
