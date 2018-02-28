@@ -12,7 +12,8 @@
 
 ![playout400](https://raw.githubusercontent.com/junxiaosong/AlphaZero_Gomoku/master/playout400.gif)
 
-- 800次MCTS搜索的模型效果:  
+- 800次MCTS搜索的模型效果: 
+
 ![playout800](https://raw.githubusercontent.com/junxiaosong/AlphaZero_Gomoku/master/playout800.gif)
 
 ### 依赖库
