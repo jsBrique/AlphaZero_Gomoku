@@ -1,9 +1,32 @@
-## AlphaZero-五子棋
+# AlphaZero-五子棋
 这是AlphaZero算法的实现，用于从纯粹的自我训练，从训练中玩一种简单的棋盘游戏Gomoku（也称为五子棋）。 Gomoku游戏比围棋或国际象棋要简单得多，因此我们可以专注于AlphaZero的训练计划，并在几小时内在单台PC上获得相当不错的AI模型。
+
 
 参考:  
 1. AlphaZero: Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm
 2. AlphaGo Zero: Mastering the game of Go without human knowledge
+
+## 太复杂不看，只想和AI玩耍
+windows操作系统下
+
+安装python2.7及其以上版本，本人使用python3.5，安装教程[python3.5安装教程](http://blog.csdn.net/qq_29202937/article/details/79404829)
+
+安装numpy1.11及其以上版本，确保在安装python后，打开命令提示符，输入命令
+```
+pip install numpy
+```
+等待安装完毕即可
+
+下载本项目程序，解压后，打开程序目录，Shift+鼠标右键打开命令提示符或powershell
+
+输入命令
+
+```
+python human_play.py
+```
+即可进入游戏玩耍
+
+## 原项目译文
 
 ### 更新2018.1.17: 现在支持使用PyTorch训练!
 
@@ -16,9 +39,10 @@
 
 ![playout800](https://raw.githubusercontent.com/junxiaosong/AlphaZero_Gomoku/master/playout800.gif)
 
+
 ### 依赖库
 如果只是使用已经训练好的模型，只需安装以下依赖:
-- Python >= 2.7
+- Python >= 2.7 
 - Numpy >= 1.11
 
 从头开始训练AI，需要这些依赖:
